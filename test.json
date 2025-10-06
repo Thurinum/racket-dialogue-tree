@@ -7,13 +7,9 @@
     ]
   },
   "win": {
-    "text": "You win.",
-    "leaf": true,
-    "choices": []
+    "text": "You win."
   },
   "death": {
-    "text": "You died.",
-    "leaf": true,
-    "choices": []
+    "text": "You died."
   }
 }
