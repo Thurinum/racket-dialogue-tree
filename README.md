@@ -8,5 +8,8 @@ The JSON is parsed into a hashmap. Console input decides how we branch across th
 Racket main.rkt story.json
 ```
 
+## Why?!
+Self-taught practice for an university exam. 
+
 ## Credits
 - Github Copilot for helping me find those f*cking missing parentheses
