@@ -2,7 +2,6 @@
 ## What is this
 A simple implementation of an interactive dialogue tree in the Racket language.  
 The JSON is parsed into a hashmap. Console input decides how we branch across the flattened tree until we reach a leaf node.  
-Self-taught practice for an university exam.
 
 ##  How to run
 ```bash
