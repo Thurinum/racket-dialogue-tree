@@ -2,11 +2,18 @@
 
 (provide run-game)
 
-(define (run-game dialogue-tree)
-  (define root-node (hash-ref dialogue-tree 'root))
-  (let loop ([node root-node])
+(define (run-game root-node)
+  (define dialogue-tree (hash-ref root-node 'dialogue))
+  (define speakers (hash-ref root-node 'speakers))
+
+  (let loop ([node (hash-ref dialogue-tree 'root)])
     (define choices (hash-ref node 'choices '()))
+      (define speaker (find-speaker-name speakers node))
+      (when (not (string=? "" speaker))
+        (printf "[\033[1m~a\033[0m] " speaker))
+
       (display (hash-ref node 'text))
+
       (when (empty? choices)
         (exit 0))
 
@@ -24,8 +31,16 @@
       (define next-node (hash-ref dialogue-tree (string->symbol key)))
       (loop next-node)))
 
+(define (find-speaker-name speakers node)
+  (define speaker-key (hash-ref node 'speaker "default"))
+  (define speaker-node (hash-ref speakers (string->symbol speaker-key) #f))
+  (when (not speaker-node)
+    "")
+  (define speaker-name (hash-ref speaker-node 'name))
+  speaker-name)
+
 (define (get-user-response choices)
-  (display "\n>>> ")
+  (display "\n\033[1m[User] \033[0m")
   (define input (read-line))
   (define number (string->number (string-trim input)))
   (define is-valid-index?

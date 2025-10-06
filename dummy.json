@@ -1,0 +1,44 @@
+{
+  "dialogue": {
+    "root": {
+      "text": "Choose an option, your life depends on it",
+      "choices": [
+        { "text": "Code in Racket", "next": "is-racketeer" },
+        { "text": "Wear a fursuit", "next": "is-furry" }
+      ]
+    },
+    "is-racketeer": {
+      "text": "Why did you choose this?",
+      "choices": [
+        { "text": "I like pain", "next": "is-evil" },
+        { "text": "I like parentheses", "next": "is-more-evil" },
+        { "text": "I like to waste my time", "next": "is-evil" }
+      ]
+    },
+    "is-furry": {
+      "text": "Why did you choose this?",
+      "choices": [
+        { "text": "It's so fluffy :3", "next": "is-autistic" },
+        { "text": "I'm autistic :33", "next": "is-autistic" },
+        { "text": "It is a lesser evil compared to Racket.", "next": "is-based" }
+      ]
+    },
+    "is-evil": {
+      "text": "There is no saving you. You are doomed."
+    },
+    "is-more-evil": {
+      "text": "'(('there ('is ('no ('saving ('you))))) (('you ('are ('doomed)))))"
+    },
+    "is-autistic": {
+      "text": "You know what, fair enough."
+    },
+    "is-based": {
+      "text": "You're right. Any price to pay is worth escaping this hellscape of parentheses."
+    }
+  },
+  "speakers": {
+    "default": {
+      "name": "Gigachad"
+    }
+  }
+}
