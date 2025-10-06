@@ -1,0 +1,123 @@
+{
+  "root": {
+    "text": "William Boulanger sits in the food court of Montreal Eaton Center, his laptop open, staring at parentheses. So many parentheses. CAE has demanded a flight simulator prototype by Friday, and they specifically said 'use Racket.' William sighs deeply. 'Why not Haskell?' he mutters. 'Beautiful, pure Haskell...' His phone buzzes. It's his project manager.",
+    "choices": [
+      { "text": "Answer the phone call", "next": "answer_call" },
+      { "text": "Ignore it and keep coding in Racket", "next": "keep_coding" },
+      { "text": "Secretly start coding in Haskell instead", "next": "rebel_haskell" }
+    ]
+  },
+  "answer_call": {
+    "text": "The manager screams about deadlines. William hangs up and notices someone watching him from across the food court. It's Jean Philippe Morissette, his ex-maths teacher and functional programming idol! Jean Philippe approaches with a knowing smile.",
+    "choices": [
+      { "text": "Ask Jean Philippe for Racket advice", "next": "jp_advice" },
+      { "text": "Complain about not using Haskell", "next": "jp_haskell_rant" }
+    ]
+  },
+  "keep_coding": {
+    "text": "William dives deep into his Racket code, fighting the urge to write monads. Two developers approach: Yanick Duhaime and Daniel Lyon. 'Need help?' asks Yanick. Daniel just spills coffee on the table.",
+    "choices": [
+      { "text": "Ask Yanick for help (despite his hatred of functional programming)", "next": "yanick_help" },
+      { "text": "Politely decline and continue alone", "next": "alone_struggle" },
+      { "text": "Ask Daniel for help (mistake)", "next": "daniel_disaster" }
+    ]
+  },
+  "rebel_haskell": {
+    "text": "William opens GHC and starts writing beautiful, elegant Haskell. The type system sings to him. Monads flow like poetry. Then his manager appears behind him, looking at the screen. 'Is that... Haskell?' Game over. You're fired.",
+    "choices": []
+  },
+  "jp_advice": {
+    "text": "'Ah, William!' Jean Philippe exclaims. 'Racket is beautiful! Think of it as Scheme with batteries included. For your flight simulator, use the GUI library and remember: everything is an expression!' He sketches some elegant code on a napkin. Suddenly, Yanick and Daniel appear.",
+    "choices": [
+      { "text": "Show them Jean Philippe's elegant solution", "next": "show_jp_solution" },
+      { "text": "Keep the wisdom to yourself", "next": "hoard_knowledge" }
+    ]
+  },
+  "jp_haskell_rant": {
+    "text": "'I miss Haskell,' William whines. 'The purity, the laziness, the type classes...' Jean Philippe's smile fades. 'William, you're thinking like a Haskell programmer in a Lisp world. Embrace the parentheses! Embrace the macros! You can't fight the lambda.' He walks away, disappointed.",
+    "choices": [
+      { "text": "Chase after him and apologize", "next": "apologize_jp" },
+      { "text": "Stand your ground, Haskell forever", "next": "haskell_stubborn" }
+    ]
+  },
+  "yanick_help": {
+    "text": "Yanick is brilliant but grimaces at every lambda. 'Look, I hate functional stuff, but I can optimize this.' He refactors your code into something that works but looks like imperative C. It's fast though. Daniel watches, confused. 'What's a lambda?' he asks.",
+    "choices": [
+      { "text": "Accept Yanick's imperative solution", "next": "imperative_win" },
+      { "text": "Defend functional purity", "next": "functional_argument" },
+      { "text": "Try to explain lambdas to Daniel", "next": "explain_daniel" }
+    ]
+  },
+  "alone_struggle": {
+    "text": "Hours pass. The food court closes. Security asks William to leave. He's only 30% done with the flight simulator. Daniel waves from a game store. 'I could help!' he offers. Yanick already left.",
+    "choices": [
+      { "text": "Accept Daniel's help (desperation)", "next": "daniel_disaster" },
+      { "text": "Go home and pull an all-nighter", "next": "allnighter" }
+    ]
+  },
+  "daniel_disaster": {
+    "text": "Daniel sits down and immediately deletes your main function. 'Oops.' He tries to help but somehow installs Temple OS instead of Racket. Your laptop blue screens. 'Is that bad?' he asks. Game over. You missed the deadline.",
+    "choices": []
+  },
+  "show_jp_solution": {
+    "text": "Yanick studies the napkin, grudgingly impressed. 'Okay, that's actually clean.' Even Daniel nods, not understanding anything. Together, you implement Jean Philippe's elegant architecture. The flight simulator takes shape with proper functional abstractions.",
+    "choices": [
+      { "text": "Continue with the team", "next": "team_success" }
+    ]
+  },
+  "hoard_knowledge": {
+    "text": "William clutches the napkin protectively. Yanick shrugs and leaves. Daniel asks, 'What's on the napkin?' You try to hide it but he grabs it, reads it upside down, gets confused, and tears it accidentally. Jean Philippe's wisdom is lost forever.",
+    "choices": [
+      { "text": "Try to remember the solution", "next": "memory_attempt" },
+      { "text": "Break down crying", "next": "emotional_breakdown" }
+    ]
+  },
+  "apologize_jp": {
+    "text": "Jean Philippe turns back, smiling. 'Good. Now, let me teach you the way of the macro. Racket's true power.' He spends the next hour showing you metaprogramming techniques. Your mind expands. You can CREATE syntax. This... this is more powerful than Haskell's type system.",
+    "choices": [
+      { "text": "Embrace the macro enlightenment", "next": "macro_enlightenment" }
+    ]
+  },
+  "haskell_stubborn": {
+    "text": "William refuses to adapt. He tries to write Haskell-style Racket, fighting the language at every turn. The code becomes a twisted mess of unnecessary abstractions. The flight simulator crashes during the demo. CAE is not impressed. Failure.",
+    "choices": []
+  },
+  "imperative_win": {
+    "text": "The solution works. It's not beautiful, but it flies. CAE loves it. 'Pragmatism wins,' Yanick says. William feels empty inside, having betrayed his functional principles. But he kept his job. Bitter victory.",
+    "choices": []
+  },
+  "functional_argument": {
+    "text": "William and Yanick argue about functional vs imperative for two hours. Daniel records it for YouTube. The deadline passes. They're both fired. But the argument got 10,000 views. Philosophical defeat.",
+    "choices": []
+  },
+  "explain_daniel": {
+    "text": "William tries to explain lambdas to Daniel. 'It's like an anonymous function...' Daniel's eyes glaze over. 'Is it like a for loop?' 'No, it's—' 'Like a variable?' 'Not exactly—' Three hours pass. Nothing is accomplished. Deadline missed. Educational failure.",
+    "choices": []
+  },
+  "allnighter": {
+    "text": "William goes home and codes through the night. Fueled by coffee and determination, he writes the most beautiful Racket code of his life. At 4 AM, enlightenment strikes: Racket isn't Haskell, and that's okay. Both are beautiful. The simulator works perfectly.",
+    "choices": [
+      { "text": "Submit the project", "next": "solo_triumph" }
+    ]
+  },
+  "team_success": {
+    "text": "Working together, William (design), Yanick (optimization), and even Daniel (moral support and snacks) complete the flight simulator. It's elegant, fast, and functional. Jean Philippe watches from afar, proud. CAE is amazed. Complete victory! William realizes: maybe Racket isn't so bad after all.",
+    "choices": []
+  },
+  "memory_attempt": {
+    "text": "William closes his eyes, trying to recall Jean Philippe's napkin wisdom. Fragments come back... something about continuations? Or was it macros? He implements a partial solution. It mostly works. The demo is shaky but acceptable. CAE gives a mediocre approval. Partial success.",
+    "choices": []
+  },
+  "emotional_breakdown": {
+    "text": "William sobs in the food court. Security is called. Jean Philippe returns and comforts him. 'It's okay. The real wisdom was inside you all along.' 'Really?' 'No, it was on the napkin. But we can reconstruct it.' Together, they rebuild the solution. Redemption arc complete! Success through vulnerability.",
+    "choices": []
+  },
+  "macro_enlightenment": {
+    "text": "William's eyes open to Racket's true power. He writes macros that generate flight simulator code. Domain-specific languages emerge from his fingertips. The final product isn't just a simulator—it's a framework for building simulators. CAE promotes him. He still loves Haskell, but now he loves Racket too. Transcendent victory!",
+    "choices": []
+  },
+  "solo_triumph": {
+    "text": "William submits at 7 AM, exhausted. The demo at noon is flawless. CAE executives applaud. Jean Philippe emails: 'I saw your code on GitHub. Beautiful.' Yanick texts: 'Not bad for functional stuff.' Daniel sends a meme he doesn't understand. William smiles. He did it. Alone, but he did it. Personal victory.",
+    "choices": []
+  }
+}
