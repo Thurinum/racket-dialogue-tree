@@ -12,4 +12,4 @@ Racket main.rkt story.json
 Self-taught practice for an university exam. 
 
 ## Credits
-- Github Copilot for helping me find those f*cking missing parentheses
+- Github Copilot for helping me find those &%^%@#$ missing parentheses
