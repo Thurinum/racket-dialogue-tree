@@ -4,17 +4,21 @@
 
 (define (run-game dialogue-tree)
   (define root-node (hash-ref dialogue-tree 'root))
-  (process-node dialogue-tree root-node))
+  (let loop ([node root-node])
+    (define choices (hash-ref node 'choices))
+      (display (hash-ref node 'text))
+      (when (eq? #t (hash-ref node 'leaf #f)) ; stop at leaf nodes
+        (exit 0))
+      (for ([choice choices]
+            [i (in-naturals 1)])
+        (printf "\n~a. ~a" i (hash-ref choice 'text)))
+      (define index (await-valid-response choices))
+      (define choice (list-ref choices index))
+      (define key (hash-ref choice 'next))
+      (define next-node (hash-ref dialogue-tree (string->symbol key)))
+      (loop next-node)))
 
-(define (process-node tree node)
-  (define choices (hash-ref node 'choices))
-  (display (hash-ref node 'text))
-  (for ([choice choices]
-        [i (in-naturals 1)])
-    (printf "\n~a. ~a" i (hash-ref choice 'text)))
-  (process-user-response tree choices))
-
-(define (process-user-response tree choices)
+(define (await-valid-response choices)
   (define num-choices (length choices))
   (let loop ()
     (display "\n>>> ")
@@ -28,10 +32,7 @@
     (cond
       [is-valid-index?
         (define index (- number 1))
-        (define choice (list-ref choices index))
-        (define key (hash-ref choice 'next))
-        (define next-node (hash-ref tree (string->symbol key)))
-        (process-node tree next-node)]
+        index]
       [else
         (printf "Invalid choice, input a number between 1 and ~a" num-choices)
         (loop)])))
