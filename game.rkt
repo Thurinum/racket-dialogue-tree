@@ -14,7 +14,7 @@
             [i (in-naturals 1)])
         (printf "\n~a. ~a" i (hash-ref choice 'text)))
 
-      (define index (await-choice choices))
+      (define index (get-user-response choices))
       (when (= index -1)
         (printf "Invalid choice, input a number between 1 and ~a" (length choices))
         (loop node))
@@ -24,7 +24,7 @@
       (define next-node (hash-ref dialogue-tree (string->symbol key)))
       (loop next-node)))
 
-(define (await-choice choices)
+(define (get-user-response choices)
   (display "\n>>> ")
   (define input (read-line))
   (define number (string->number (string-trim input)))
